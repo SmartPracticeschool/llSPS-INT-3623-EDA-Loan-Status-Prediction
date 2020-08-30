@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Loan prediction </title>
+   <link rel = "icon" href = "{{url_for('static', filename='favicon.png')}}" 
+        type = "image/x-icon"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+body{
+    background: #50a3a2;
+background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+}
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  font-weight: 300;
+  position: centre;
+  
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    font-family: 'Source Sans Pro', sans-serif;
+      color:    black;
+    font-weight: 300;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-family: 'Source Sans Pro', sans-serif;
+     color:    black;
+     opacity:  1;
+     opacity:  1;
+    font-weight: 300;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-family: 'Source Sans Pro', sans-serif;
+     color:    black;
+     opacity:  1;
+    font-weight: 300;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-family: 'Source Sans Pro', sans-serif;
+     color:    black;
+    font-weight: 300;
+  }
+}
+.container{
+  background: #50a3a2;
+background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+}
+.container{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+  max-width: 340px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px 0;
+  position: middle;
+  /*height: 100%;*/
+  text-align: center;
+  
+  header{
+    font-size: 40px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-put;
+    font-weight: 200;
+  }
+}
+
+     
+.MAIN button
+{
+height:30px;
+width:200px;
+margin-left:60px;
+background-color:blue;
+}
+
+.MAIN b{
+font-size:20px;
+font-weight:800px;
+text-align:center;
+font-family: 'Source Sans Pro', sans-serif;
+margin-left:20px;
+}
+</style>
+</head>
+
+<body>
+ 
+<div class="container">
+      
+<nav style="background-color: rgba(32, 153, 100, 0.3);" class="red">
+
+</nav>
+<br>
+      <h2 style="color:black;">Loan approval Prediction </h2>
+      <p style="color:darkslategray;padding-left: 40px;padding-right: 40px;">it's a very important process for banking organizations. The system approved or reject the loan applications.</p>
+    
+    <br>
+<div class="header">
+<h1>EDA Loan Status Prediction</h1>
+</div>
+<div class="MAIN">
+<form action = "{{url_for('prediction')}}" method = "post">
+<br>
+<label for = "Gender">Gender</label>
+<select name = "Gender">
+<option value = "Male">Male</option>
+<option value = "Female">Female</option>
+</select>
+</br>
+<br>
+<label for = "Married">Married</label>
+<select name = "Married">
+<option value = "Yes">Yes</option>
+<option value = "No">No</option>
+</select>
+</br>
+<p>Dependents<span><input type = "number" name = "Dependents"/></span></p>
+<br>
+<label for = "Education">Education</label>
+<select name = "Education">
+<option value = "-Select-">-Select</option>
+<option value = "educated">educated</option>
+<option value = "uneducated">uneducated</option>
+</select>
+</br>
+<br>
+<label for = "Self_Employed">Self_Employed</label>
+<select name = "Self_Employed">
+<option value = "yes">yes</option>
+<option value = "no">no</option>
+</select>
+</br>
+<br>
+<p> ApplicantIncome <span><input type = "float" name = "ApplicantIncome"/></span></p>
+<p> CoapplicantIncome <span><input type = "float" name = "CoapplicantIncome"/></span></p>
+<p> LoanAmount <span><input type = "float" name = "LoanAmount"/></span></p>
+<p> Loan_Amount_Term <span><input type = "number" name = "Loan_Amount_Term"/></span></p>
+</br>
+<br>
+<label for = "Credit_History">Credit_History</label>
+<select name = "Credit_History">
+<option value = "yes">yes</option>
+<option value = "no">no</option>
+</select>
+</br>
+<br>
+<label for = "Property_Area">Property_Area</label>
+<select name = "Property_Area">
+<option value = "urban">urban</option>
+<option value = "semiurban">semiurban</option>
+<option value = "rural">rural</option>
+</select>
+</br>
+
+<br>
+<button type="submit" >SUBMIT</button></br>
+</form>
+<b>{{y}}</b>
+
+</div>
+</body>
+</html>
